@@ -1,1 +1,1496 @@
-Hola mundo :)
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HJG Multiservices - Professional Remodeling, Cleaning & Maintenance in Atlanta</title>
+    <meta name="description"
+        content="10 years of excellence in remodeling, cleaning, painting, maintenance, junk removal, and gardening services in Atlanta, GA. Professional team delivering exceptional results.">
+    <meta name="keywords"
+        content="remodeling Atlanta, cleaning services Atlanta, painting contractors, junk removal, gardening services, property maintenance, home improvement Georgia">
+    <link rel="icon" href="./img/logo.png">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Color Variables - Blue/Teal/Yellow Theme */
+        :root {
+            --primary-blue: #2c7da0;
+            --teal: #468b97;
+            --yellow: #f4a261;
+            --dark-teal: #2a6f7a;
+            --light-blue: #89c2d9;
+            --gray-dark: #1a1a1a;
+            --gray-mid: #4a4a4a;
+            --gray-light: #6b7280;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            background: var(--white);
+            color: var(--gray-dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%);
+            box-shadow: 0 4px 20px rgba(44, 125, 160, 0.2);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 6px 25px rgba(44, 125, 160, 0.25);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--white) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem !important;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--yellow);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .nav-link:hover {
+            color: var(--yellow) !important;
+        }
+
+        .logo-hjg {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 50%, var(--dark-teal) 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0 4rem;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 60%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(244, 162, 97, 0.15) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            background: linear-gradient(135deg, var(--yellow), #e76f51);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(244, 162, 97, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h1 .highlight {
+            color: var(--yellow);
+            display: block;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero .lead {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .btn-primary-custom {
+            background: var(--yellow);
+            color: var(--white);
+            padding: 1.1rem 2.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(244, 162, 97, 0.4);
+            font-size: 1.05rem;
+        }
+
+        .btn-primary-custom:hover {
+            background: #e76f51;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(244, 162, 97, 0.5);
+            color: var(--white);
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--white);
+            padding: 1.1rem 2.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            border: 2px solid var(--white);
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        .btn-outline-custom:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            border-color: var(--white);
+        }
+
+        /* Contact Info Cards */
+        .contact-cards {
+            margin-top: 3rem;
+        }
+
+        .contact-mini-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-mini-card:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-3px);
+        }
+
+        .contact-mini-card i {
+            font-size: 2rem;
+            color: var(--yellow);
+            margin-bottom: 0.8rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 0;
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--gray-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--yellow));
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            color: var(--teal);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-box {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .value-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(44, 125, 160, 0.15);
+        }
+
+        .value-box h5 {
+            color: var(--teal);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .value-box p {
+            color: var(--gray-light);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .core-value-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+        }
+
+        .core-value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(44, 125, 160, 0.15);
+        }
+
+        .core-value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(44, 125, 160, 0.3);
+        }
+
+        /* Safety Commitment Section */
+        .safety-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--dark-teal) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+        }
+
+        .safety-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .safety-icon {
+            font-size: 3rem;
+            color: var(--yellow);
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--yellow));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(44, 125, 160, 0.2);
+        }
+
+        .service-icon-wrapper {
+            width: 85px;
+            height: 85px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            color: var(--white);
+            margin-bottom: 1.8rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(44, 125, 160, 0.25);
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            transform: scale(1.1) rotate(-5deg);
+            background: linear-gradient(135deg, var(--yellow), var(--teal));
+        }
+
+        .service-card h4 {
+            color: var(--gray-dark);
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            padding: 0.6rem 0;
+            color: var(--gray-light);
+            position: relative;
+            padding-left: 1.8rem;
+            line-height: 1.6;
+        }
+
+        .service-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
+        }
+
+        .carousel-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .carousel-inner {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-item img {
+            height: 650px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            background-color: var(--yellow);
+        }
+
+        .carousel-indicators button {
+            background-color: var(--primary-blue);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* Before & After Section */
+        .before-after-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .comparison-carousel {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .comparison-carousel .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .comparison-label {
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal));
+            color: var(--white);
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e3f2fd 100%);
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            padding: 1.8rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+            margin-bottom: 1.8rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .contact-info-item:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateX(10px);
+        }
+
+        .contact-info-item:hover .contact-icon {
+            background: var(--yellow);
+            color: var(--white);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .contact-info-item a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--yellow), #e76f51);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
+        }
+
+        .cta-box h4 {
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        /* Map */
+        .map-responsive {
+            position: relative;
+            overflow: hidden;
+            padding-top: 0;
+            height: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .map-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--gray-dark) 0%, #0d1117 100%);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 4rem 0 2rem;
+        }
+
+        footer h5 {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            line-height: 45px;
+            text-align: center;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--yellow);
+            transform: translateY(-3px);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(44, 125, 160, 0.4);
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: linear-gradient(135deg, var(--yellow), #e76f51);
+            transform: translateY(-5px);
+        }
+
+        /* Tagline Section */
+        .tagline-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--yellow), #e76f51);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .tagline-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-wrapper img {
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 991px) {
+            .hero-image-wrapper {
+                margin-top: 3rem;
+            }
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .logo-hjg {
+                height: 50px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .carousel-item img {
+                height: 400px;
+            }
+
+            .comparison-carousel .carousel-item img {
+                height: 350px;
+            }
+
+            .contact-info-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./img/logo.png" alt="HJG Multiservices" class="logo-hjg me-2">
+                HJG Multiservices
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="hero-content">
+                        <span class="hero-badge">10 Years of Excellence</span>
+                        <h1>
+                            Your Home,<br>
+                            <span class="highlight">Our Mission.</span>
+                        </h1>
+                        <p class="tagline">"We Improve. We Clean. We Transform."</p>
+                        <p class="lead">
+                            Professional remodeling, cleaning, painting, maintenance, junk removal, and gardening
+                            services in Atlanta. Trusted partner delivering impeccable results that exceed expectations.
+                        </p>
+                        <div class="d-flex gap-3 mb-4 flex-wrap">
+                            <a href="#contact" class="btn btn-primary-custom">Get Free Estimate</a>
+                            <a href="#services" class="btn btn-outline-custom">Explore Services</a>
+                        </div>
+                        <div class="contact-cards">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="contact-mini-card">
+                                        <i class="fas fa-phone-alt"></i>
+                                        <div>
+                                            <small style="opacity: 0.9;">Call Us Today</small><br>
+                                            <strong style="font-size: 1.2rem;">470-929-3333</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-mini-card">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <div>
+                                            <small style="opacity: 0.9;">Located in</small><br>
+                                            <strong style="font-size: 1.1rem;">Brookhaven, Atlanta</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agrega esta columna nueva -->
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="hero-image-wrapper">
+                        <img src="./img/hero.jpg" alt="HJG Services" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Get to Know Us</p>
+                <h2 class="section-title">Who We Are</h2>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <p style="font-size: 1.15rem; line-height: 1.9; color: var(--gray-mid);">
+                        At <strong style="color: var(--primary-blue);">HJG Multiservices</strong>, we are committed
+                        to transforming and maintaining residential and commercial spaces with professionalism,
+                        quality, and care. With over <strong>10 years of experience</strong>, we have built a
+                        reputation for offering dependable services tailored to each client's needs.
+                    </p>
+                    <p style="line-height: 1.8; color: var(--gray-light);">
+                        Our team focuses on delivering efficient, detail-oriented work—from remodeling and painting
+                        to property cleaning, maintenance, junk removal, and gardening. We take pride in creating
+                        clean, functional, and visually appealing environments while maintaining strong communication,
+                        respect, and integrity in every project.
+                    </p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="value-box">
+                                <h5><i class="fas fa-bullseye me-2"></i> Our Mission</h5>
+                                <p>
+                                    To provide reliable, high-quality multi-service solutions that improve the comfort,
+                                    appearance, and functionality of every property while delivering excellent customer
+                                    service and long-lasting results.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="value-box" style="border-left-color: var(--yellow);">
+                                <h5><i class="fas fa-eye me-2"></i> Our Vision</h5>
+                                <p>
+                                    To become the preferred, trusted multi-service company in Atlanta by continuously
+                                    elevating our standards, expanding our capabilities, and helping clients maintain
+                                    beautiful, well-cared-for spaces.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5" data-aos="fade-up">
+                <div class="col-12 text-center mb-5">
+                    <h3 style="color: var(--gray-dark); font-weight: 800; font-size: 2.2rem;">Our Core Values</h3>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="core-value-card">
+                        <div class="core-value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h5 style="color: var(--teal); font-weight: 700;">Experience</h5>
+                        <p style="color: var(--gray-light);">10 years of dedication transforming spaces successfully</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="core-value-card">
+                        <div class="core-value-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h5 style="color: var(--teal); font-weight: 700;">Quality</h5>
+                        <p style="color: var(--gray-light);">Impeccable results that exceed expectations</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="core-value-card">
+                        <div class="core-value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h5 style="color: var(--teal); font-weight: 700;">Professionalism</h5>
+                        <p style="color: var(--gray-light);">Reliable and responsible service every time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Commitment Section -->
+    <section class="safety-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 style="color: var(--white); font-size: 2.5rem; font-weight: 800;">Our Commitment to Safety</h2>
+                <p style="font-size: 1.15rem; opacity: 0.95; max-width: 800px; margin: 1rem auto 0;">
+                    Safety and care for your home or business are integral to how we operate
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="safety-card">
+                        <i class="fas fa-shield-alt safety-icon"></i>
+                        <h5 style="font-weight: 700; margin-bottom: 1rem;">Property Protection</h5>
+                        <p style="opacity: 0.9;">We treat every site with respect, protecting client property throughout
+                            the entire project.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="safety-card">
+                        <i class="fas fa-hard-hat safety-icon"></i>
+                        <h5 style="font-weight: 700; margin-bottom: 1rem;">Proper PPE</h5>
+                        <p style="opacity: 0.9;">Using proper personal protective equipment and safe work practices at
+                            all times.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="safety-card">
+                        <i class="fas fa-broom safety-icon"></i>
+                        <h5 style="font-weight: 700; margin-bottom: 1rem;">Tidy Work Areas</h5>
+                        <p style="opacity: 0.9;">Keeping work areas clean and organized to prevent accidents and ensure
+                            efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Complete Solutions</p>
+                <h2 class="section-title">What We Do</h2>
+                <p class="mt-4"
+                    style="font-size: 1.15rem; color: var(--gray-light); max-width: 750px; margin: 1.5rem auto 0;">
+                    Comprehensive services for residential and commercial properties in Atlanta
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Remodeling -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <h4>Remodeling & Property Improvements</h4>
+                        <ul class="service-list">
+                            <li>Kitchen & bathroom updates</li>
+                            <li>Flooring installation</li>
+                            <li>Interior improvements</li>
+                            <li>Wall repairs & drywall work</li>
+                            <li>General renovations</li>
+                        </ul>
+                        <p style="color: var(--teal); font-weight: 600; margin-top: 1rem; font-style: italic;">
+                            We turn outdated areas into modern, functional spaces.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cleaning -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <h4>Residential & Commercial Cleaning</h4>
+                        <ul class="service-list">
+                            <li>Regular & deep cleaning</li>
+                            <li>Move-in / move-out cleaning</li>
+                            <li>Post-construction cleaning</li>
+                            <li>Office & commercial cleaning</li>
+                        </ul>
+                        <p style="color: var(--teal); font-weight: 600; margin-top: 1rem; font-style: italic;">
+                            We deliver spotless, organized, and fresh environments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Painting -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-paint-roller"></i>
+                        </div>
+                        <h4>Painting Services</h4>
+                        <ul class="service-list">
+                            <li>Interior painting</li>
+                            <li>Exterior painting</li>
+                            <li>Detail work (doors, trim, touch-ups)</li>
+                        </ul>
+                        <p style="color: var(--teal); font-weight: 600; margin-top: 1rem; font-style: italic;">
+                            Using quality materials and clean techniques, we bring life and color to every space.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Maintenance -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Maintenance & Repairs</h4>
+                        <ul class="service-list">
+                            <li>Minor repairs</li>
+                            <li>General maintenance</li>
+                            <li>Handyman services</li>
+                            <li>Preventive upkeep</li>
+                        </ul>
+                        <p style="color: var(--teal); font-weight: 600; margin-top: 1rem; font-style: italic;">
+                            Reliable service tailored to your home or business.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Junk Removal -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-truck-pickup"></i>
+                        </div>
+                        <h4>Junk Removal & Clean Outs</h4>
+                        <ul class="service-list">
+                            <li>Furniture disposal</li>
+                            <li>Trash & debris removal</li>
+                            <li>Yard clean-outs</li>
+                            <li>Move-out junk removal</li>
+                        </ul>
+                        <p style="color: var(--teal); font-weight: 600; margin-top: 1rem; font-style: italic;">
+                            We leave your space clean, clear, and ready to use.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gardening -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Gardening & Landscaping</h4>
+                        <ul class="service-list">
+                            <li>Lawn care & maintenance</li>
+                            <li>Garden design & planting</li>
+                            <li>Tree & shrub trimming</li>
+                            <li>Seasonal cleanup</li>
+                        </ul>
+                        <p style="color: var(--teal); font-weight: 600; margin-top: 1rem; font-style: italic;">
+                            Creating and maintaining beautiful outdoor spaces.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tagline Section -->
+    <section class="tagline-section" data-aos="zoom-in">
+        <div class="container">
+            <h2>"We Improve. We Clean. We Transform."</h2>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Our Portfolio</p>
+                <h2 class="section-title">Work Gallery</h2>
+                <p class="mt-4" style="font-size: 1.15rem; color: var(--gray-light);">
+                    See the quality and attention to detail in every project
+                </p>
+            </div>
+
+            <div class="carousel-container" data-aos="zoom-in">
+                <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="6"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="7"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="8"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="9"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="10"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="11"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="12"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="13"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="14"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="15"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="16"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="17"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="18"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="19"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="20"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="21"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="22"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="23"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="24"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="25"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="26"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="27"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="28"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="29"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="30"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="31"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="32"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="33"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="34"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="35"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="36"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="37"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="38"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="39"></button>
+                        <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="40"></button>
+
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./img/1.jpg" class="d-block w-100" alt="HJG Project 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/2.jpg" class="d-block w-100" alt="HJG Project 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/3.jpg" class="d-block w-100" alt="HJG Project 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/4.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/5.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/6.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/7.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/8.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/9.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/10.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/11.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/12.jpg" class="d-block w-100" alt="Construction Project 12">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/13.jpg" class="d-block w-100" alt="Construction Project 13">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/14.jpg" class="d-block w-100" alt="Construction Project 14">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/15.jpg" class="d-block w-100" alt="Construction Project 15">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/16.jpg" class="d-block w-100" alt="Construction Project 16">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/17.jpg" class="d-block w-100" alt="Construction Project 17">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/18.jpg" class="d-block w-100" alt="Construction Project 18">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/19.jpg" class="d-block w-100" alt="Construction Project 19">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/20.jpg" class="d-block w-100" alt="Construction Project 20">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/21.jpg" class="d-block w-100" alt="Construction Project 21">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/22.jpg" class="d-block w-100" alt="Construction Project 22">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/23.jpg" class="d-block w-100" alt="Construction Project 23">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/24.jpg" class="d-block w-100" alt="Construction Project 24">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/25.jpg" class="d-block w-100" alt="Construction Project 25">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/26.jpg" class="d-block w-100" alt="Construction Project 26">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/27.jpg" class="d-block w-100" alt="Construction Project 27">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/28.jpg" class="d-block w-100" alt="Construction Project 28">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/29.jpg" class="d-block w-100" alt="Construction Project 29">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/30.jpg" class="d-block w-100" alt="Construction Project 30">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/31.jpg" class="d-block w-100" alt="Construction Project 31">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/32.jpg" class="d-block w-100" alt="Construction Project 32">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/33.jpg" class="d-block w-100" alt="Construction Project 33">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/34.jpg" class="d-block w-100" alt="Construction Project 34">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/35.jpg" class="d-block w-100" alt="Construction Project 35">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/36.jpg" class="d-block w-100" alt="Construction Project 36">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/37.jpg" class="d-block w-100" alt="Construction Project 37">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/38.jpg" class="d-block w-100" alt="Construction Project 38">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/39.jpg" class="d-block w-100" alt="Construction Project 39">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/40.jpg" class="d-block w-100" alt="Construction Project 40">
+                        </div>
+                        <!-- Add more carousel items for each image -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="section-subtitle">Let's Talk</p>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="mt-4" style="font-size: 1.15rem; color: var(--gray-light);">
+                    Get in touch for a free estimate on your next project
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-card">
+                        <h4 style="color: var(--gray-dark); margin-bottom: 2rem; font-weight: 800; font-size: 1.8rem;">
+                            Get In Touch
+                        </h4>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <small style="color: var(--gray-light);">Owner</small><br>
+                                <strong style="font-size: 1.1rem;">Jeanett Laura Garcia</strong>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <small style="color: var(--gray-light);">Phone</small><br>
+                                <strong style="font-size: 1.1rem;"><a href="tel:+14709293333">470-929-3333</a></strong>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <small style="color: var(--gray-light);">Email</small><br>
+                                <strong><a
+                                        href="mailto:jeanettlaura80@icloud.com">jeanettlaura80@icloud.com</a></strong>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <small style="color: var(--gray-light);">Address</small><br>
+                                <strong>212 Gien Way NE, Brookhaven<br>Atlanta, GA 30319</strong>
+                            </div>
+                        </div>
+
+                        <div class="cta-box mt-4">
+                            <h4><i class="fas fa-tools me-2"></i> Free Estimates</h4>
+                            <p>Contact us today for a complimentary consultation and estimate on your project!</p>
+                            <a href="tel:+14709293333" class="btn btn-outline-custom"
+                                style="border-color: white; color: white;">
+                                <i class="fas fa-phone me-2"></i> Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="map-responsive">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.1234567890!2d-84.3398765!3d33.8732985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDUyJzIzLjkiTiA4NMKwMjAnMjMuNiJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>HJG Multiservices</h5>
+                    <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.8;">
+                        Painting, Remodeling and Maintenance LLC<br>
+                        <strong style="color: var(--yellow);">"Your Home, Our Mission."</strong>
+                    </p>
+                    <p style="color: rgba(255, 255, 255, 0.7);">
+                        10 years of dedication transforming spaces in Atlanta with professionalism and quality.
+                    </p>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.7rem;"><a href="#home">Home</a></li>
+                        <li style="margin-bottom: 0.7rem;"><a href="#about">About Us</a></li>
+                        <li style="margin-bottom: 0.7rem;"><a href="#services">Services</a></li>
+                        <li style="margin-bottom: 0.7rem;"><a href="#gallery">Gallery</a></li>
+                        <li style="margin-bottom: 0.7rem;"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <h5>Our Services</h5>
+                    <ul style="list-style: none; padding: 0; color: rgba(255, 255, 255, 0.7);">
+                        <li style="margin-bottom: 0.7rem;">✓ Remodeling & Renovations</li>
+                        <li style="margin-bottom: 0.7rem;">✓ Residential & Commercial Cleaning</li>
+                        <li style="margin-bottom: 0.7rem;">✓ Painting Services</li>
+                        <li style="margin-bottom: 0.7rem;">✓ Maintenance & Repairs</li>
+                        <li style="margin-bottom: 0.7rem;">✓ Junk Removal</li>
+                        <li style="margin-bottom: 0.7rem;">✓ Gardening & Landscaping</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p style="margin: 0; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">
+                    © 2025 <strong style="color: var(--yellow);">HJG Multiservices</strong> - Painting, Remodeling and
+                    Maintenance LLC<br>
+                    All Rights Reserved · Atlanta, GA
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            duration: 900,
+            easing: 'ease-out-cubic'
+        });
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll to top button
+        const scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
